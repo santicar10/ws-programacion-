@@ -17,13 +17,17 @@ public class Main {
                         break;
                     case 2:
                         try {
-                            rango(resultado);
-                            resultado = num1 - num2;
-                            JOptionPane.showMessageDialog(null,"la resta es: "+resultado);
-
+                            if (num2>num1){
+                                resultado = num1 - num2;
+                                rango(resultado);
+                            }
+                            else{
+                                resultado = num1 - num2;
+                                JOptionPane.showMessageDialog(null,"la resta es: "+resultado);
+                            }
                         }
                         catch ( NewExeccion e){
-                            JOptionPane.showMessageDialog(null,"hpta");
+                            JOptionPane.showMessageDialog(null,"no se pueden hacer operaciones por numeros negativos");
                         }
                         break;
                     case 3:
@@ -48,7 +52,7 @@ public class Main {
     }
     static void rango (double resultado) throws NewExeccion{
         if (resultado<0){
-            throw new NewExeccion("no se pueden hacer operaciones por numeros negativos");
+            throw new NewExeccion("");
         }
     }
 }
